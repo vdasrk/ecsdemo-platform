@@ -221,7 +221,9 @@ class BaseVPCStack(Stack):
         CfnOutput(self, "ServicesSecGrp", value=self.services_3000_sec_group.security_group_id, export_name="ServicesSecGrp")
         CfnOutput(self, "StressToolEc2Id",value=self.instance.instance_id)
         CfnOutput(self, "StressToolEc2Ip",value=self.instance.instance_private_ip)
-      
+        
+        # App Mesh Implementation
+        self.appmesh()
     
     # function to create app mesh
     def appmesh(self):
